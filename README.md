@@ -1,36 +1,25 @@
-Automated Resume Classification and Job Role Prediction
-This project automates the classification of resumes into different job roles using Natural Language Processing (NLP) and machine learning models. The goal is to predict a candidate's job role based on the content of their resume. The project includes data preprocessing, feature extraction, model training, and evaluation.
+🚀 Automated Resume Classification and Job Role Prediction
+Welcome to the Automated Resume Classification and Job Role Prediction project! This project utilizes Natural Language Processing (NLP) and Machine Learning to predict job roles based on resume content. It showcases techniques such as text preprocessing, feature extraction using TF-IDF, and model training with Naive Bayes and SVM classifiers.
 
-Project Overview
-This project demonstrates how to classify resumes into job roles using machine learning. It involves preprocessing raw resume data, extracting meaningful features from the text, and applying classification models to predict the job roles. The project uses the following steps:
+✨ Project Overview
+In this project, we automate the process of classifying resumes into various job roles. Here's what the project entails:
 
-Text Preprocessing: Clean and normalize resume text by removing unnecessary characters, digits, and stopwords, followed by tokenization and lemmatization.
+Text Preprocessing: Cleaning and normalizing resume text, including removing unnecessary characters, digits, stopwords, and performing tokenization and lemmatization.
 
-Feature Extraction: Transform the cleaned text into numerical features using TF-IDF (Term Frequency-Inverse Document Frequency).
+Feature Extraction: Extracting meaningful features from resumes using TF-IDF (Term Frequency-Inverse Document Frequency) vectorization.
 
-Model Training: Train two machine learning models—Naive Bayes and Support Vector Machine (SVM)—to classify the resumes.
+Model Training: Training Naive Bayes and SVM classifiers to predict the job roles of candidates.
 
-Hyperparameter Tuning: Perform GridSearchCV to optimize the parameters for the SVM model.
+Model Evaluation: Evaluating the models based on various classification metrics like accuracy, precision, recall, and F1-score.
 
-Model Evaluation: Evaluate models based on accuracy and classification metrics.
+Model Persistence: Saving the trained models and vectorizers for future use using joblib.
 
-Model Saving: Save the trained models and TF-IDF vectorizers using joblib for future use.
+🔧 Prerequisites
+Before you run the project, make sure you have the following installed:
 
-Features
-Text Preprocessing: The text data undergoes cleaning, tokenization, stopword removal, and lemmatization.
-
-TF-IDF Vectorization: Transforms text data into numerical vectors using the TF-IDF method.
-
-Machine Learning Models: Trains Naive Bayes and SVM models for classification.
-
-GridSearchCV: Performs hyperparameter tuning for the SVM model to select the best parameters.
-
-Model Persistence: Saves the trained models and vectorizers to disk for later use.
-
-Prerequisites
 Python 3.x
 
-Required libraries:
+Libraries:
 
 pandas
 
@@ -39,45 +28,48 @@ nltk
 scikit-learn
 
 joblib
-Dataset
-The dataset consists of resumes in text format, with the following expected columns:
 
-resume_text: The raw text content of the resume.
+📊 Dataset
+The dataset consists of resumes in CSV format with the following expected columns:
 
-profession: The job role/label associated with the resume.
+resume_text: The raw content of the resume (in text format).
 
-Please ensure your dataset is in a CSV file, and update the code to point to the correct dataset path.
+profession: The predicted job role (the label).
+🛠 Project Workflow
+1. Data Preprocessing
+We clean the resume text by:
 
-Project Workflow
-Data Preprocessing:
+Lowercasing the text.
 
-Converts all text to lowercase.
+Removing special characters and digits.
 
-Removes special characters and digits.
+Tokenizing the text.
 
-Tokenizes the text and removes stopwords.
+Removing stopwords.
 
-Lemmatizes the tokens for consistency.
+Lemmatizing the tokens.
 
-Feature Extraction:
+2. Feature Extraction
+We use TF-IDF Vectorization to transform the cleaned text into numerical features, which can be understood by machine learning models.
 
-Converts the cleaned text into numerical features using the TF-IDF vectorizer.
+3. Model Training
+We train two machine learning models:
 
-Model Training:
+Naive Bayes: A fast and effective text classification algorithm.
 
-Trains two machine learning models:
+SVM (Support Vector Machine): A more robust classifier optimized using GridSearchCV.
 
-Naive Bayes: A probabilistic classifier that is fast and effective for text classification.
+4. Model Evaluation
+We evaluate the models based on:
 
-SVM: A robust model for text classification, with hyperparameter tuning using GridSearchCV.
+Accuracy: How often the classifier makes the correct prediction.
 
-Model Evaluation:
+Precision: How many of the predicted positives are actually positive.
 
-The models are evaluated based on accuracy, precision, recall, and F1-score.
+Recall: How many of the actual positives are correctly identified.
 
-The classification report is printed for both models.
+F1-score: The harmonic mean of precision and recall.
 
-Model Saving:
-
-The best SVM model and the TF-IDF vectorizer are saved using joblib for future use.
+5. Model Saving
+Finally, we save the trained models and vectorizer using joblib for future predictions.
 
